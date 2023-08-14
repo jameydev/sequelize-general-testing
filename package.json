@@ -1,0 +1,19 @@
+{
+  "name": "sequelize-general-testing",
+  "version": "1.0.0",
+  "description": "JameyDev learning how to use sequelize",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jamey Bryce",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mariadb": "^3.2.0",
+    "sequelize": "^6.32.1"
+  }
+}
