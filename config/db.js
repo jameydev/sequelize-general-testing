@@ -6,13 +6,16 @@ const connectDB = async (
     dbDialect = { 
         dialect: 'mariadb' 
     }) => {
-    const sequelize = new Sequelize(dbUri, dbDialect);
-    try {
-        await sequelize.authenticate();
-        console.log('Connection has been established successfully.'.green);
-    } catch (err) {
-        console.error(`Unable to connect to the database: ${err}`.red);
-    }
+        const sequelize = new Sequelize(dbUri, dbDialect);
+
+        try {
+            await sequelize.authenticate();
+            console.log('Connection has been established successfully.'.green);
+        } catch (err) {
+            console.error(`Unable to connect to the database: ${err}`.red);
+        }
+
+        return sequelize;
 };
 
 module.exports = connectDB;
