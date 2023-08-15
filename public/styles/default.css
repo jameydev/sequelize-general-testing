@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #f1f1f1;
+    --secondary-color: #e0e0e0;
+    --tertiary-color: #c0c0c0;
+    --quaternary-color: #a0a0a0;
+    --quinary-color: #808080;
+    --senary-color: #606060;
+    --septenary-color: #404040;
+    --octonary-color: #202020;
+    --nonary-color: #101010;
+    --denary-color: #000000;
+    --accent: #165ea5;
+    --text: #fff;
+    --icons: #e6e6e6;
+    --bg: #2d81c1;
+    --btn: linear-gradient(to bottom, #2d81c1 0%, #165ea5 100%);
+    --secondary: #1e2124;
+    --boxShadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.1);
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+body, html {
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    color: var(--text);
+    background: linear-gradient(to bottom, var(--bg) 0%, var(--secondary) 100%);
+}
+
+a {
+    text-decoration: inherit;
+    color: var(--text);
+}

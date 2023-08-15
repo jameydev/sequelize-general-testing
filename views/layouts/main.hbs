@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/styles/default.css">
+    <script src="/scripts/index.js" async></script>
+    {{#each stylesheets}}
+    <link rel="stylesheet" href="{{this}}">
+    {{/each}}
+    {{#each scripts}}
+    <script src="{{this}}" defer></script>
+    {{/each}}
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-title">{{title}}</h1>
+        <nav class="header-nav">
+            <ul>
+                <li class="header-nav-item"><a href="/">Home</a></li>
+                <li class="header-nav-item"><a href="/users">Users</a></li>
+                <li class="header-nav-item"><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="app">
+        {{body}}
+    </div>
+    <footer class="footer">
+        <p class="footer-copyright">
+            &copy; {{year}} JameyDev
+        </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</body>
+</html>

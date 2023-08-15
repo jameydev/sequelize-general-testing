@@ -1,4 +1,5 @@
 const express = require('express');
+const { engine } = require('express-handlebars');
 const colors = require('colors');
 const { Sequelize } = require('sequelize');
 const dotenv = require('dotenv').config();
@@ -6,13 +7,30 @@ const connectDB = require('./config/db');
 const { User } = require('./models/User');
 
 const app = express();
-
 app.use(express.json());
+
+const router = express.Router();
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+app.set('views', 'views');
+app.set('view engine', 'hbs');
+app.engine('hbs', engine({
+    extname: 'hbs',
+    helpers: require('./helpers.js'),
+    partialsDir: 'partials',
+    layoutsDir: 'views/layouts',
+    defaultLayout: 'main'
+}));
+
+app.get('/', async (req, res) => {
+    const users = await User.findAll();
+    res.render('index.hbs', {
+        title: 'Home',
+        stylesheets: ['index/main.css'],
+        scripts: ['index/index.js'],
+        users: users
+    });
 });
 
 const port = process.env.PORT || 5000;

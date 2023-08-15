@@ -1,0 +1,9 @@
+<main class="content">
+    <ul class="users">
+        {{#each users}}
+        <li class="user">
+            <a href="/users/{{users.userId}}">{{users.userName}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</main>
